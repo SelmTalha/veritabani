@@ -1,0 +1,58 @@
+/*SELECT ABS (-3)
+SELECT floor(3.5)
+SELECT ceiling(3.5)*/
+
+/*Power üs alma iþlemi gerçekleþtirir.Verilen iki deðerden ilki taban ikincisi üs olarak kabul edilir.
+SELECT power(5,3) */
+
+/*SQRT: Bu fonksiyon ile verilen deðerin karekökü alýnýr.
+SELECT sqrt(25)*/
+
+/* Mod - % : Bu fonksiyon ile verilen iki deðerden birincisi ikincisine bölünür ve kalan sonuç geriye döndürülür.
+select (7%2) */
+
+/* Sign : Bu fonksiyon ile verilen deðerin ters iþareti döndürülür.*/
+/* Square: Matematiksel olarak kare alma iþlemini yapmaktadýr.Tek Parametre alýr.*/
+
+/*
+AVG FONKSÝYONU 
+ Herhangi bir sütunun sayýsal deðerlerinin aritmetik ortalamasýný bulmak için kullanýlýr.
+ 
+Örnek: Öðrencilerin Vize Notlarý ortalamasýný bulmak için;
+Select avg(vize)as'vize ortalamasý'
+from Notlar;
+*/
+
+/*SUM FONKSÝYONU: Herhangi bir sütunun sayýsal deðerlerinin toplamýný bulur.
+SELECT sum(maas) as 'Maas Toplamý' from calisanlar;*/
+
+/*Max ve Min Fonksiyonu : Max deðer ve min deðeri bulur.
+SELECT max(maas) from calisanlar;
+SELECT min(maas) from calisanlar;*/
+
+/*Count Fonksiyonu : Bir tablodaki kayýtlarýn sayýlmasý amacýyla kullanýlýr 
+SELECT COUNT(*) as 'Kayýt Sayýsý' from calisanlar */
+
+/*Group By: Bir tablonun satýrlarý gruplara ayýlarak fonksiyonlarýn bunlara uygulanmasý mümkündür. 
+Gruplara ayýrmak için Select deyimi içerisine Group By yazýlýr.
+SELECT Ad,Soyad ,Maas from calisanlar group by maas 
+
+Her bir görevde çalýþan personelin sayýsýný bulan sql ifadesi:
+SELECT gorev,count(gorev)as Per_Say from personel group by gorev 
+*/
+
+/* Öðrenci tablosunda sadece 3,5,6 numaralý bölümler için her bölümde bulunan toplam öðrenci saysýný hesaplayan sql cümlesi ;
+SELECT BolumIdd,Count(*) as sayý ,from ogrenci group by BolumId having BolumId In(3,5,6) */
+
+
+/* Calisanlar Tablosu için ;
+select avg(Maas) as 'Maas Ortalamasý' from calisanlar;
+SELECT BolumId, COUNT(BolumId) as per_Say from calisanlar GROUP BY BolumId 
+SELECT BolumId , max(Maas) as en_yuksekmaas,MIN(Maas) as en_dusukmaas,(max(Maas)-MIN(Maas)) as 'Max - min farký' from calisanlar GROUP BY BolumId
+SELECT BolumId , avg(Maas) as OrtalamaMaas from calisanlar GROUP BY BolumId having BolumId IN(3,5) 
+
+SELECT BolumId, max(Maas) as 'En Çok'
+from calisanlar GROUP BY BolumId
+HAVING avg(Maas)>3500
+*/
+
