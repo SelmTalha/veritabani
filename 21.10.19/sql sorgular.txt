@@ -1,0 +1,40 @@
+----CREATE View calisanbilgi AS Select Ad,Soyad,BolumId from calisanlar
+
+--select * from vw_calisanbilgi
+
+--CREATE View calisanad as Select Ad,Soyad,bolumler.BolumId,bolumler.BolumAd from calisanlar 
+--inner join bolumler on calisanlar.BolumId=bolumler.BolumId 
+
+--View Silmek için DROP VIEW ifadesi kullanýlýr.
+
+--DROP VIEW calisanad 
+
+--Oluþturulan view üzerinde deðiþiklik yapmak için Alter view ifadesi kullanýlýr.
+
+--ALTER VIEW view_adi WITH seçenekler AS SELECT ifadesi
+
+--ALTER VIEW calisanad as select Ad,Soyad,Maas from calisanlar
+
+--Örnek:vw_perList adýnda maaþý 3500'den büyük olan personel bilgilerini listeleyen view oluþturalým.
+
+--Create view per_list as SELECT * FROM calisanlar where Maas>3500
+
+--INSERT INTO per_list VALUES('Mahmut','Canlý',3600,4)
+
+--ALTER VIEW per_list AS SELECT * FROM calisanlar WHERE Maas>3500 WITH check option
+
+--INSERT INTO per_list VALUES('Sevgi','Canan',4500,1)
+
+--select * from per_list
+
+--SCHEMABINDING ÝLE VIEW'i kilitledik.Drop ile silemeyiz.
+--CREATE VIEW vw_calisan WITH SCHEMABINDING AS SELECT Ad,Soyad,Maas From dbo.calisanlar
+--DROP TABLE calisanlar
+
+
+--CREATE VIEW vw_calisanGizli WITH encryption --Kaynak Gizleme 
+--AS SELECT Ad,Soyad,Maas From calisanlar
+
+--SELECT * FROM vw_calisanGizli
+
+
